@@ -2,7 +2,7 @@ FROM node:16-slim AS node
 FROM php:7.4-fpm
 
 RUN apt-get -y update
-RUN apt-get -y install git
+RUN apt-get -y install git rsync
 
 COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
 COPY --from=node /usr/local/bin/node /usr/local/bin/node
